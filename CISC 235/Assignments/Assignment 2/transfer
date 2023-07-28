@@ -1,0 +1,162 @@
+class Stack
+
+	def isEmpty(list):
+		if len(list) == 0:
+			return True
+		else: 
+			Return False
+	
+	def push(list,item):
+		list.append(item)
+	
+	def pop(list):
+		item = list[len(list) -1]
+		list.remove(item)
+		return item
+
+	def top(list):
+		item = list[len(list) - 1]
+		return item
+	
+	def size(list):
+		return len(list)
+	
+
+class BST
+
+	def __init__(self, val):
+		self.val = val
+		self.leftchild = None
+		self.rightchild = None
+	
+	def insert(self,n):
+		n.rightchild = self.rightchild
+		n.leftchild = self 
+		self.rightchild = n
+	
+	def insert_node(prevnode,node):
+		node.leftchild = prevnode 
+		node.rightchild = prevnode.rightchild
+		prevnode.rightchild = node
+		
+		
+"""
+    list_node.py
+
+    Contains a simple ListNode class, which simply has 'val' and 'next' fields.
+"""
+
+class ListNode:
+    """ Models a single node in a singly-linked list.  Has no methods, other
+        than the constructor.
+    """
+    def insert(self,n):
+        n.rightchild = self.rightchild
+        n.leftchild = self
+        self.rightchild = n
+
+
+
+
+    def __init__(self, val):
+        """ Constructs the object; caller must pass a value, which will be
+            stored in the 'val' field.
+        """
+
+        self.val = val
+        self.leftchild = None
+        self.rightchild=None
+
+    def __str__(self):
+        vals, objs = [], []
+        curr = self
+        while curr is not None:
+            curr_str = str(curr.val)
+            if curr in objs:
+                vals.append("{} -> ... (to infinity and beyond)".format(curr_str))
+                break
+            else:
+                vals.append(curr_str)
+                objs.append(curr)
+            curr = curr.rightchild
+
+        return " -> ".join(vals)
+		
+import Node
+def insert_node(prevnode,node):
+    node.leftchild = prevnode
+    if prevnode == None:
+        pass
+    else:
+      node.rightchild = prevnode.rightchild
+    prevnode.rightchild = node
+
+def prob3():
+    list_char = []
+    str = input("please enter a string ")
+    list_char = str.split()
+    header = Node.ListNode(0)
+    nodecount = 0
+    prevnode = header
+    #print(list_char)
+    for c in list_char:
+        c =  int(c)
+        node = Node.ListNode(c)
+
+        insert_node(prevnode,node)
+        #node.next = None
+
+
+        nodecount += 1
+
+      #  print (node.next)
+        if nodecount == 1:
+            header = node
+        else:
+            prevnode.rightnext = node
+
+        # if nodecount == 1:
+        #     header = node
+        #     node.next = None
+        # else:
+        #node.next = prevnode
+        prevnode = node
+    return header
+header = Node.ListNode(0)
+header = prob3()
+print(header)
+
+
+import Node
+
+def prob3():
+    list_char = []
+    str = input("please enter a string ")
+    list_char = str.split()
+    header = None
+    nodecount = 0
+    prevnode = None
+    #print(list_char)
+    for c in list_char:
+        c =  int(c)
+        node = Node.ListNode(c)
+        node.next = None
+
+        nodecount += 1
+
+      #  print (node.next)
+        if nodecount == 1:
+            header = node
+        else:
+            prevnode.next = node
+
+        # if nodecount == 1:
+        #     header = node
+        #     node.next = None
+        # else:
+        #node.next = prevnode
+        prevnode = node
+    return header
+
+header = prob3()
+print(header)

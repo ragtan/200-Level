@@ -1,0 +1,61 @@
+Part 3:
+
+	Note : I was having some trouble in implementing parts of my code required for this activity, thus, data below may be inaccurate.
+	
+	k = 22
+	
+		n = 500
+		
+			Time(A) = 0.00513
+			Time(B) = 0.00524
+		
+		n = 1000
+		
+			Time(A) = 0.00249
+			Time(B) = 0.00255
+			
+	k = 24
+	
+		n = 500
+		
+			Time(A) = 0.00560
+			Time(B) = 0.00547
+	
+		n = 1000
+		
+			Time(A) = 0.00280
+			Time(B) = 0.00264
+			
+	k = 28
+	
+		n = 5000
+		
+			Time(A) = 0.0145
+			Time(B) = 0.0150
+			
+		n = 10000
+		
+			Time(A) = 0.030
+			Time(B) = 0.031
+	
+	k = 30
+	
+		n = 5000
+		
+			Time(A) = 0.017
+			Time(B) = 0.015
+			
+		n = 10000
+		
+			Time(A) = 0.033
+			Time(B) = 0.030
+			
+			
+Based on the data collected above, the smallest value of k for which algorithm B becomes faster than algorithm A, let's call this F(n) is as follows:
+	
+	Approximate values for F(n), where n = 500, 1000, 5000, 10000 :
+	
+		F(500) = 24
+		F(1000) = 24
+		F(5000) = 30
+		F(10000) = 30
