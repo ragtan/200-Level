@@ -1,0 +1,71 @@
+1. Correct String: pwzd0notxpld
+
+2. a) C Program:
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+
+	char ch[40];
+
+	char* msg0 = "Enter diffuse string:";
+
+	char* msg1 = "BOOM!! Bomb Exploded. Bye! Bye!\n";
+
+	char* msg2 = "Bomb Defused! Good work!\n";
+
+	char* fusedata = "abcdefghijklmnopqrstuvwxyz0123456789 \n";
+
+	int arr[] = {15, 11, 25, 3, 26, 13, 14, 19, 23, 15, 11, 3};
+ 
+	int x;
+	
+	int y;
+
+	printf("%s\n", msg0);
+
+	fgets(ch, sizeof(ch), stdin);
+
+	for (x=0; ch[x]!=0 && ch[x]!=10;) {		//.L6 , .L3 , .L2
+		
+		y = arr[x];
+		
+		if (ch[x] <= 96 || ch[x] > 122) {
+
+			if (ch[x] != fusedata[arr[x]-2]) {	//.L6
+			
+				x = x + 1;
+			}
+
+			else {
+			
+				printf("%s\n", msg1);	
+			
+				exit(1);
+			}
+
+		}
+
+		else {
+
+			ch[x] = ch[x] - 32;
+
+		}
+	}
+
+	printf("arr is 48\n");
+
+	if(x==12) { 	//.L5
+
+		printf("%s\n", msg2); 	//.L7
+
+		exit(0);
+
+	} else { 	//.L5
+		
+		printf("%s\n", msg1);
+
+		exit(1);
+	}
+}
